@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2048</title>
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+  </head>
+
+  <body>
+
+    <div class="above-board">
+      <h1>2048</h1>
+      <div class="new-game"><button>Новая Игра</button></div>
+      <br/><br/>
+      <div class="score"><span>Рекорд: 0</span></div>
+    </div>
+
+    <div class="modal"></div>
+    <figure class="game">
+    </figure>
+
+    <div class="below-board">
+      <span>Как играть :Мышкой вашего пк или свайпами в телефоне.Собирайте числа воедино что бы получилось 2048!</span>
+      <br/><br />
+      <span class="foot-text">Игра создана<a href="https://vk.com/archergamesofficial"> Игры Archera</a></div>
+
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/tile.js"></script>
+
+
+    <script>
+    $(function() {
+      $(".game").swipe( {
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        },
+         threshold:0
+      });
+    });
+    </script>
+
+    <script>
+      $(function () {
+        new JSGame.Game($(".game"));
+      });
+    </script>
+  </body>
+</html>
